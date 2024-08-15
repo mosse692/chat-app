@@ -30,6 +30,8 @@ const Auth = () => {
 
       const URL = 'https://chat-app-server-phi-steel.vercel.app/auth'
 
+      axios.defaults.withCredentials = true
+
       const {data: {token, userId, hashedPassword, fullName}} = await axios.post(`${URL}/${isSignup ? 'signup' : 'login'}`,{
         username, password, fullName: form.fullName, phoneNumber, AvatarURL
       })
