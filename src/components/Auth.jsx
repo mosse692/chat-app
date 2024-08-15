@@ -28,7 +28,7 @@ const Auth = () => {
 
       const {username, password, phoneNumber, AvatarURL} = form
 
-      const URL = 'http://localhost:5000/auth'
+      const URL = '/auth'
 
       const {data: {token, userId, hashedPassword, fullName}} = await axios.post(`${URL}/${isSignup ? 'signup' : 'login'}`,{
         username, password, fullName: form.fullName, phoneNumber, AvatarURL
